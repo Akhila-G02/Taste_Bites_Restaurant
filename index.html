@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Bites Restaurant - Authentic Indian Cuisine</title>
+    <link rel="stylesheet" href="TBR CSS.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <span style="font-size: 2.5rem;">🍛</span>
+                <span class="logo-text">Taste Bites</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="#home" onclick="scrollToSection(event, 'home')">Home</a></li>
+                <li><a href="#specials" onclick="scrollToSection(event, 'specials')">Specials</a></li>
+                <li><a href="#menu" onclick="scrollToSection(event, 'menu')">Menu</a></li>
+                <li><a href="#gallery" onclick="scrollToSection(event, 'gallery')">Gallery</a></li>
+                <li><a href="#booking" onclick="scrollToSection(event, 'booking')">Book Table</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Taste Bites</h1>
+            <p>Experience Authentic Indian Flavors</p>
+            <a href="#booking" class="btn" onclick="scrollToSection(event, 'booking')">Reserve Your Table</a>
+        </div>
+    </section>
+
+    <!-- Daily Specials -->
+    <section id="specials">
+        <div class="container">
+            <h2>Today's Specials</h2>
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="special-img" style="background-image: url('https://i.pinimg.com/1200x/36/9d/ae/369daecaf3eb4dbd7bae0df6d3c9fc9d.jpg');"></div>
+                    <div class="special-content">
+                        <span class="badge non-veg">Non-Veg</span>
+                        <h3>Grilled Butter Chicken</h3>
+                        <p>Tender chicken in rich, creamy tomato gravy with aromatic spices and butter</p>
+                        <div class="price">₹420</div>
+                    </div>
+                </div>
+                <div class="special-card">
+                    <div class="special-img" style="background-image: url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80');"></div>
+                    <div class="special-content">
+                        <span class="badge non-veg">Non-Veg</span>
+                        <h3>Grilled Mutton</h3>
+                        <p>Succulent mutton pieces marinated in yogurt and spices, perfectly grilled</p>
+                        <div class="price">₹550</div>
+                    </div>
+                </div>
+                <div class="special-card">
+                    <div class="special-img" style="background-image: url('https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&q=80');"></div>
+                    <div class="special-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Paneer Tikka</h3>
+                        <p>Cottage cheese cubes marinated in spices and grilled to perfection</p>
+                        <div class="price">₹320</div>
+                    </div>
+                </div>
+                <div class="special-card">
+                    <div class="special-img" style="background-image: url('https://i.pinimg.com/1200x/c6/1d/cd/c61dcd1f44c06b156de82a5971f44ffe.jpg');"></div>
+                    <div class="special-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Grilled Mushroom</h3>
+                        <p>Fresh mushrooms marinated with herbs and spices, char-grilled</p>
+                        <div class="price">₹280</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterMenu('all')">All Items</button>
+                <button class="category-btn" onclick="filterMenu('non-veg')">Non-Veg</button>
+                <button class="category-btn" onclick="filterMenu('veg')">Veg</button>
+                <button class="category-btn" onclick="filterMenu('dessert')">Desserts</button>
+            </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Non-Veg Items -->
+                <div class="menu-item non-veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/57/58/8b/57588b32c55b721df9710bfe1093fe1f.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge non-veg">Non-Veg</span>
+                        <h3>Hyderabadi Chicken Dum Biryani</h3>
+                        <p>Aromatic basmati rice layered with tender chicken, slow-cooked with authentic spices</p>
+                        <div class="price">₹350</div>
+                    </div>
+                </div>
+                <div class="menu-item non-veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/05/0a/94/050a94b63f4516e3594446c094910627.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge non-veg">Non-Veg</span>
+                        <h3>Mutton Biryani</h3>
+                        <p>Fragrant rice with succulent mutton pieces, infused with saffron and traditional spices</p>
+                        <div class="price">₹450</div>
+                    </div>
+                </div>
+                <div class="menu-item non-veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/38/c1/e4/38c1e4389dee28d2951bb11614683f97.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge non-veg">Non-Veg</span>
+                        <h3>Paya Soup</h3>
+                        <p>Traditional slow-cooked mutton trotters in rich, flavorful broth with aromatic spices</p>
+                        <div class="price">₹280</div>
+                    </div>
+                </div>
+                <div class="menu-item non-veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/82/5c/01/825c01786eead0aa450390265a1a704a.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge non-veg">Non-Veg</span>
+                        <h3>Chicken Curry</h3>
+                        <p>Classic chicken curry with onion-tomato gravy and authentic Indian spices</p>
+                        <div class="price">₹320</div>
+                    </div>
+                </div>
+                
+                <!-- Veg Items -->
+                <div class="menu-item veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/1d/f6/36/1df6362c66dd293cc90ef0ede65b3818.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Dal Rice</h3>
+                        <p>Comfort food combination of yellow lentils and steamed basmati rice</p>
+                        <div class="price">₹180</div>
+                    </div>
+                </div>
+                <div class="menu-item veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/a8/80/e4/a880e414ec96c6d657b2673c385107e5.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Lemon Rice</h3>
+                        <p>Tangy South Indian rice flavored with lemon juice, curry leaves, and peanuts</p>
+                        <div class="price">₹160</div>
+                    </div>
+                </div>
+                <div class="menu-item veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/c4/c1/b6/c4c1b63b9603e4c370537c77ccd3c330.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Curd Rice</h3>
+                        <p>Cooling rice mixed with fresh yogurt, seasoned with mustard seeds and curry leaves</p>
+                        <div class="price">₹140</div>
+                    </div>
+                </div>
+                <div class="menu-item veg show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/27/f1/fc/27f1fcbecc791d1c09f14b60cca37e30.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Kaju Pulav</h3>
+                        <p>Fragrant basmati rice cooked with cashews, vegetables, and aromatic spices</p>
+                        <div class="price">₹250</div>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="menu-item dessert show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/1200x/db/8b/a6/db8ba65c756aedc67564fb05cc85c8f9.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Gulab Jamun</h3>
+                        <p>Soft, spongy milk dumplings soaked in rose-flavored sugar syrup</p>
+                        <div class="price">₹80</div>
+                    </div>
+                </div>
+                <div class="menu-item dessert show">
+                    <div class="menu-item-img" style="background-image: url('https://i.pinimg.com/736x/30/79/2f/30792f47ce9f294da614f72342152ddf.jpg');"></div>
+                    <div class="menu-item-content">
+                        <span class="badge veg">Veg</span>
+                        <h3>Bread Halwa</h3>
+                        <p>Sweet dessert made from bread, milk, sugar, and ghee with nuts and cardamom</p>
+                        <div class="price">₹100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://i.pinimg.com/1200x/b7/b9/63/b7b96300c7654f8963449646ce3a77e7.jpg');"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://i.pinimg.com/1200x/5b/be/eb/5bbeebc27b650b21cbacdfb85e82a156.jpg');"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://i.pinimg.com/736x/da/a1/7f/daa17f587f32aedc99009f1f9247e482.jpg');"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://i.pinimg.com/1200x/88/f7/3e/88f73ec8e8715dc7cac99af576c4d31e.jpg');"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://i.pinimg.com/1200x/72/d1/86/72d18610a4b90085c14be953a8e85943.jpg');"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('https://i.pinimg.com/736x/a9/2c/2c/a92c2c88e12a783d6485be61f71c394f.jpg');"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking">
+        <div class="container">
+            <h2>Reserve Your Table</h2>
+            <form class="booking-form" id="bookingForm">
+                <div class="success-message" id="successMessage">
+                    ✓ Your table has been reserved successfully! We'll send you a confirmation shortly.
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error" id="nameError">Please enter your name</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError">Please enter a valid email</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error" id="phoneError">Please enter a valid phone number</div>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date *</label>
+                    <input type="date" id="date" name="date" required>
+                    <div class="error" id="dateError">Please select a date</div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time *</label>
+                    <input type="time" id="time" name="time" required>
+                    <div class="error" id="timeError">Please select a time</div>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests *</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select...</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6+">6+ Guests</option>
+                    </select>
+                    <div class="error" id="guestsError">Please select number of guests</div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Any dietary restrictions or special occasions?"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Reserve Table</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; font-weight: bold;">&copy; 2024 Taste Bites Restaurant. All rights reserved.</p>
+            <p>📍 Banjara Hills, Hyderabad, Telangana | 📞 +91 9876543210 | ✉️ info@tastebites.com</p>
+        </div>
+    </footer>
+
+    <script src="TBR JS.js"></script>
+</body>
+</html>
